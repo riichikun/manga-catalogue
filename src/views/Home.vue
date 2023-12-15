@@ -45,7 +45,7 @@ export default {
         Comedy: 4,
         Drama: 8,
         Fantasy: 10
-    },
+    } as {[index: string]:any},
     selectedGenre: ref("All")
     }
   },
