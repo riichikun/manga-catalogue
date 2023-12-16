@@ -165,7 +165,8 @@ import axios from 'axios';
                 this.currentChapter = Number(e.target.innerText);
                 console.log(e.target.parentElement.previousElementSibling.innerText)
                 this.currentVol = e.target.parentElement.previousElementSibling.innerText.replace('Value ', '')
-                document.querySelector('.content__block').style.display = 'flex';
+                const contentBlock = document.querySelector<HTMLElement>('.content__block')!
+                contentBlock.style.display = 'flex';
             },
             openPage(e: any) {
                 this.currentPage = Number(e.target.innerText);
