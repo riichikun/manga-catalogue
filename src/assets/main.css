@@ -6,7 +6,7 @@ body {
   background: #141414;
 }
 
-a, p, h1, h2, h3, h4, label, input, select {
+a, p, h1, h2, h3, h4, label, input, select, button, div {
   color: #fff;
   font-family: "Play";
 }
@@ -28,6 +28,7 @@ a {
 
 button, select, input[type=submit] {
   cursor: pointer;
+  border: none;
 }
 
 main {
@@ -111,6 +112,83 @@ select {
   width: fit-content;
 }
 
+.volumes__block {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.volume {
+  width: 100%;
+}
+.volume button {
+  width: 100%;
+  height: 35px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.volume__inner {
+  display: flex;
+  color: #fff;
+  gap: 5px;
+  justify-content: center;
+  display: none;
+}
+.volume__inner .chapter {
+  margin: 20px 0;
+  background-color: #703BF7;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.content__block {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.manga-content {
+  margin: 30px 0;
+  height: 400px;
+  width: 280px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #141414;
+  text-align: center;
+  font-size: 30px;
+  position: relative;
+}
+
+.page-turner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.page-turner .prev, .page-turner .next {
+  width: 50%;
+}
+
+.manga__nav {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.manga__nav button {
+  width: 30px;
+  height: 30px;
+}
+
 @media (min-width: 500px) {
   .title-cards {
     display: flex;
@@ -124,6 +202,10 @@ select {
   .title-cards .title-card img {
     height: 400px;
   }
+  .manga-content {
+    width: 500px;
+    height: 700px;
+  }
 }
 @media (min-width: 768px) {
   .title-cards {
@@ -135,7 +217,7 @@ select {
   .title-cards .title-card {
     width: 33%;
   }
-  .title__page section {
+  .title__page section:first-of-type {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -149,6 +231,10 @@ select {
   }
   .title__page h1 {
     font-size: 35px;
+  }
+  .manga-content {
+    width: 700px;
+    height: 1100px;
   }
 }
 @media (min-width: 800px) {

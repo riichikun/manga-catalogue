@@ -20,7 +20,7 @@ body {
     background: $main-bg-color;
 }
 
-a, p, h1, h2, h3, h4, label, input, select {
+a, p, h1, h2, h3, h4, label, input, select, button, div {
     color: $text-color;
     font-family: $main-font;
 }
@@ -42,8 +42,8 @@ a {
 
 button, select, input[type="submit"] {
     cursor: pointer;
+    border: none;
 }
-
 
 main {
     @include flex-col;
@@ -122,9 +122,81 @@ select {
     }
 }
 
+.volumes__block {
+    width: 90%;
+    @include flex-col;
+    gap: 10px;
+}
 
+.volume {
+    width: 100%;
+    button {
+        width: 100%;
+        height: 35px;
+        color: $text-color;
+        font-size: 20px;
+    }
+}
 
+.volume__inner {
+    display: flex;
+    color: $text-color;
+    gap: 5px;
+    justify-content: center;
+    display: none;
+    .chapter {
+        margin: 20px 0;
+        background-color: #703BF7;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+}
 
+.content__block {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.manga-content {
+    margin: 30px 0;
+    height: 400px;
+    width: 280px;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    color: $main-bg-color;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+}
+
+.page-turner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .prev, .next {
+        width: 50%;
+    }
+}
+
+.manga__nav {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    button {
+        width: 30px;
+        height: 30px;
+    }
+}
 
 
 
@@ -142,7 +214,10 @@ select {
             }
         }
     }
-
+    .manga-content {
+        width: 500px;
+        height: 700px;
+    }
 }
 
 
@@ -158,7 +233,7 @@ select {
         }
     }
     .title__page {
-        section {
+        section:first-of-type {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -173,6 +248,10 @@ select {
        h1 {
         font-size: 35px;
        }
+    }
+    .manga-content {
+        width: 700px;
+        height: 1100px;
     }
 }
 

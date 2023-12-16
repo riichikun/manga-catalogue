@@ -9,11 +9,7 @@
                 <label for="select">Choose a genre if needed:</label>
                 <select v-model ="selectedGenre" name="select">
                     <option value="All" selected>All</option>
-                    <option value="Action">Action</option>
-                    <option value="Adventure">Adventure</option>
-                    <option value="Comedy">Comedy</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Fantasy">Fantasy</option>
+                    <option  v-for="genre in Object.keys(genres)" :value="genre">{{genre}}</option>
                 </select>
                 <input  type="submit" value="Search">
             </form>
@@ -44,7 +40,10 @@ export default {
         Adventure: 2,
         Comedy: 4,
         Drama: 8,
-        Fantasy: 10
+        Fantasy: 10,
+        Romance: 22,
+        Sports: 30,
+        Music: 19
     } as {[index: string]:any},
     selectedGenre: ref("All")
     }
@@ -66,8 +65,8 @@ export default {
             else {
                 console.log(2)
                 this.titles = [];
-                console.log(`https://api.jikan.moe/v4/manga?q=${form.target.elements.search.value}&sfw&genres_exclude=28,26?genres=${this.genres[this.selectedGenre]}`)
-                axios.get(`https://api.jikan.moe/v4/manga?q=${form.target.elements.search.value}&sfw&genres_exclude=28,26&genres=${this.genres[this.selectedGenre]}`).then((e) => {
+                console.log(`https://api.jikan.moe/v4/manga?q=${form.target.elements.search.value}&sfw&genres_exclude=28,26,49,9?genres=${this.genres[this.selectedGenre]}`)
+                axios.get(`https://api.jikan.moe/v4/manga?q=${form.target.elements.search.value}&sfw&genres_exclude=28,26,49,9&genres=${this.genres[this.selectedGenre]}`).then((e) => {
                 this.titles = e.data.data
                 }).then((e) => {
                     for(let i = 0; i<this.titles.length; i++) {
