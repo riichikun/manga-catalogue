@@ -163,8 +163,8 @@ import axios from 'axios';
             },
             openChapter(e: any) {
                 this.currentChapter = Number(e.target.innerText);
-                console.log(e.target.parentElement.previousElementSibling.innerText)
-                this.currentVol = e.target.parentElement.previousElementSibling.innerText.replace('Value ', '')
+                let currentVol = e.target.parentElement.previousElementSibling.innerText.replace("Volume ", "")
+                this.currentVol = Number(currentVol)
                 const contentBlock = document.querySelector<HTMLElement>('.content__block')!
                 contentBlock.style.display = 'flex';
             },
