@@ -118,8 +118,8 @@
                 <div className="manga-content">
                     There could be {{title.title}} volume {{ currentVol }} chapter {{ currentChapter }} page {{ currentPage }}
                     <div class="page-turner">
-                        <div @click="turnPage(e, 'prev')" class="prev"></div>
-                        <div @click="turnPage(e, 'next')" class="next"></div>
+                        <div @click="turnPage($event, 'prev')" class="prev"></div>
+                        <div @click="turnPage($event, 'next')" class="next"></div>
                     </div>
                 </div>
                 
